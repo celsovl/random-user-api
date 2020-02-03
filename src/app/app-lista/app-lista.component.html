@@ -1,0 +1,10 @@
+<div>Usuários Randômicos</div>
+<ul>
+  <li *ngFor="let randomUser of randomUsers">
+    <div class="row" (click)="onDetalhes(randomUser)">
+      <div class="col">{{randomUser.nome}}</div>
+      <div class="col">{{randomUser.email}}</div>
+    </div>
+  </li>
+</ul>
+

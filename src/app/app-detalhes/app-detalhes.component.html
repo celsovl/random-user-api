@@ -1,0 +1,7 @@
+<div class="row">
+  <div class="col"><img [src]="randomUser.fotoUrl" /></div>
+  <div class="col">Nome: {{randomUser.nome }}</div>
+  <div class="col">Endereço: {{randomUser.endereco}}, {{randomUser.cidade}}</div>
+  <div class="col">Telefone: {{randomUser.telefone }}</div>
+  <div class="col">Data de Nascimento: {{randomUser.nascimento | date: "dd/MM/yyyy" }}</div>
+</div>
