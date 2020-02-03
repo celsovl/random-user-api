@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { RandomUser } from '../models';
 import { RandomUserService } from '../services';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-app-lista',
@@ -17,8 +18,10 @@ export class AppListaComponent implements OnInit {
 
   randomUsers: RandomUser[];
 
-  async ngOnInit() {
-    this.randomUsers = await this.randomUserService.getAll();
+  ngOnInit() {
+    this.randomUserService
+      .getAll()
+      .subscribe(users => this.randomUsers = users);
   }
 
   onDetalhes(randomUser: RandomUser) {
